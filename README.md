@@ -73,43 +73,26 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 ## Architecture Explanation
 This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
 
-Azure App Service is a powerful web application hosting platform. 
+Azure App Service is a powerful web application hosting platform. some advantages:
 
-An App Service provides a detailed view of application health and performance to make right decisions for business improvement. It also provides deep insights into app’s response times CPU & memory utilization, throughput and error trends.
+- Multiple languages and frameworks - App Service has first-class support for ASP.NET, ASP.NET Core, Java, Ruby, Node.js, PHP, or Python. You can also run PowerShell and other scripts or executables as background services.
+- Managed production environment - App Service automatically patches and maintains the OS and language frameworks for you. Spend time writing great apps and let Azure worry about the platform.
+- Global scale with high availability - Scale up or out manually or automatically. Host your apps anywhere in Microsoft's global datacenter infrastructure, and the App Service SLA promises high availability.
+- Connections to SaaS platforms and on-premises data - Choose from more than 50 connectors for enterprise systems (such as SAP), SaaS services (such as Salesforce), and internet services (such as Facebook). Access on-premises data using Hybrid Connections and Azure Virtual Networks.
 
-Appservice provides layered security like multi-factor authentication to access the application. Azure App Service is also ISO and PCI compliant. Apps can be hosted anywhere manually or automatically on Microsoft’s global datacenter infrastructure. App Service provides high availability with of 99.5% SLA uptime.
+Disadvantages:
 
-Microsoft Azure offers pay-as-you-go pricing. It is very cost effective for small and medium enterprises. App Services also has built-in load balancers that help save infrastructure costs.
-
-Some Disadvantages:
-
-No remote Deskstop, Performent counter, requirement specific skillset with admintrator
-
+- Remote Desktop Is Not Available
+- Limits on Installing 3rd Party Software and Management Tools
+-Performance Counters Are Not Available
 --------------------
 
 Azure Functions is a serverless solution that allows you to write less code, maintain less infrastructure, and save on costs. Instead of worrying about deploying and maintaining servers, the cloud infrastructure provides all the up-to-date resources needed to keep your applications running.
 
-It can enables you to easily build serverless and event-driven compute workloads. 
-An Azure function can be triggered by an external event. It will executes the code that is implemeted in the function. 
+You focus on the code that matters most to you, in the most productive language for you, and Azure Functions handles the rest.
+Azure functions and lambda functions are two new serverless technologies that are growing faster than anything else in the cloud development.
+Therefore, Azure Functions is best to employ for parts of your applications that run as separate processes. These scripts are event-triggered and need to be scalable. Furthermore, you can code Functions using different programming languages such as C#, F#, JavaScript, Java, TypeScript, Python, and PowerShell.
 
-Some Disadvantages:
-
-It is not a replacement for Web APIs. However, in some instances, they are excellent Web API extensions.
-Since it is a compute-on-demand service, it is not best for intensive computing and long-running functions.
-Designed to execute a single or few things as fast as possible, it can’t perform multiple tasks.
-
-
-------------------------
-Pros of fully-managed PostgreSQL in Azure:
-Fully managed high availability, backup, patching and updates. Most ongoing maintenance efforts are taken care of as part of the managed service.
-Automated scalability.
-Storage is an integrated part of the service, and scales automatically based on usage up to 4TB. Note that you cannot scale down storage.
-
-Cons of fully-managed PostgreSQL in Azure:
-Azure SQL Database for PostgreSQL only supports PostgreSQL 9.5, 9.6, 10, and 11. The Flexible Server solution has more limited version support - only PostgreSQL versions 11 and 12. If you run workloads on versions earlier than 9.5, you will need to upgrade your database.
-
-Migration between major versions of PostgreSQL is not supported - you will need to take a dump of the database and restore it to an instance with the new version.
 -----------------------
-This App is lightweight, therefore deployed through an App Service are reasonable and no need significant compute capability. Function App support microsverices as well as run background job by ServiceBus very good.
+This is lightweight app, therefore use App Service is very quickly to deploy, management. Function App support microservices as well as run background job by ServiceBus very good.
 
-This App is lightweight, therefore deployed through an App Service are reasonable and no need significant compute capability.
